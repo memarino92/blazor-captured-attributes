@@ -1,0 +1,12 @@
+<button class="h-10 p-2 rounded border bg-cyan-500 text-white hover:bg-cyan-300 transition disabled:bg-gray-300"
+    @attributes=@CapturedAttributes>
+    @ChildContent
+</button>
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object>? CapturedAttributes { get; set; }
+}

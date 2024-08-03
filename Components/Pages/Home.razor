@@ -1,0 +1,20 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<div class="flex flex-col gap-2 w-max p-5">
+
+    <h1 class="text-2xl font-bold">Check out my button!</h1>
+
+    <Button @onclick=@(() => count++) disabled=@isDisabled>Click me!</Button>
+    <Button @onclick=@(() => isDisabled = !isDisabled)>Disable button 1</Button>
+
+    <p> The curent count is: @count</p>
+
+</div>
+
+@code {
+    private int count = 0;
+    private bool isDisabled = false;
+}
